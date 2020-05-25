@@ -8,6 +8,7 @@ import Meta from './Meta';
 import Tags from './Tags';
 import styles from './Post.module.scss';
 import type { Node } from '../../types';
+import Commento from './Comments/Commento';
 
 type Props = {
   post: Node
@@ -35,8 +36,12 @@ const Post = ({ post }: Props) => {
       <div className={styles['post__comments']}>
         <Comments postSlug={slug} postTitle={post.frontmatter.title} />
       </div>
+
+      <div className={styles['post__comments']}>
+        <Commento /> 
+      </div>
     </div>
   );
 };
-
+// id={slug}
 export default Post;
